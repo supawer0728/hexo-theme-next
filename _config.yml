@@ -27,12 +27,12 @@ override: false
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
-  #android_manifest: /images/manifest.json
-  #ms_browserconfig: /images/browserconfig.xml
+  small: /images/favicon-16x16.png
+  medium: /images/favicon-32x32.png
+  apple_touch_icon: /images/apple-icon-180x180.png
+  #safari_pinned_tab: /images/logo.svg
+  android_manifest: /images/manifest.json
+  ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
 keywords: "Hexo, NexT"
@@ -45,20 +45,20 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2018
 
   # Icon between year and copyright info.
-  icon: user
+  icon: heart
 
   # If not defined, will be used `author` from Hexo main config.
   copyright:
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
-  powered: false
+  powered: true
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: false
+    enable: true
     # Version info of NexT after scheme info (vX.X.X).
     version: true
   # -------------------------------------------------------------
