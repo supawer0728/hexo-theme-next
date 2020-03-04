@@ -467,6 +467,9 @@ needmoreshare2:
 # Google Analytics
 google_analytics: UA-115481794-1
 
+# Google AdSense
+google_adsense: ca-pub-7970218401476521
+
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/
 #bing_site_verification:
