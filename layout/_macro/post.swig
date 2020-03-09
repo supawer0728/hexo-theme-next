@@ -17,14 +17,16 @@
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
+    <meta itemprop="image" content="{{ config.url }}{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}">
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="{{ theme.author }}">
       <meta itemprop="description" content="{{ theme.signature }}">
-      <meta itemprop="image" content="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}">
+      <meta itemprop="image" content="{{ config.url }}{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="{{ config.title }}">
+      <meta itemprop="logo" content="{{ config.url }}{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}">
     </span>
 
     {% if not headlessPost %}
@@ -85,13 +87,15 @@
               {% if theme.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __('post.modified') }}&#58;</span>
               {% endif %}
-              <time title="{{ __('post.modified') }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">
               {% if post.modified_at %}
+              <time title="{{ __('post.modified') }}" itemprop="dateModified" datetime="{{ post.modified_at }}T00:00:00+09:00">
                 {{ post.modified_at }}
-              {% else %}
-                {{ date(post.date, config.date_format) }}
-              {% endif %}
               </time>
+              {% else %}
+              <time title="{{ __('post.modified') }}" itemprop="dateModified" datetime="{{ moment(post.date).format() }}">
+                {{ date(post.date, config.date_format) }}
+              </time>
+              {% endif %}
             {% endif %}
           </span>
 
